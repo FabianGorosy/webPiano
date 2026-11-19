@@ -15,13 +15,14 @@ fs.mkdirSync(publico, { recursive: true });
 fs.copyFileSync(path.join(raiz, 'Cumbion-PC', 'servidor-online.js'), path.join(aqui, 'online.js'));
 
 const icono = fs.readFileSync(path.join(raiz, 'OrganoCumbia', 'assets', 'icon.png')).toString('base64');
+const favicon = fs.readFileSync(path.join(raiz, 'OrganoCumbia', 'assets', 'favicon.png')).toString('base64');
 const pagina = fs
   .readFileSync(path.join(raiz, 'pagina-descarga', 'plantilla.html'), 'utf8')
   .replace('{{ICONO}}', `data:image/png;base64,${icono}`)
   .replace('{{ENLACE}}', 'Cumbion-Organo.apk');
 fs.writeFileSync(
   path.join(publico, 'index.html'),
-  `<!doctype html>\n<html lang="es">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n</head>\n<body>\n${pagina}\n</body>\n</html>\n`,
+  `<!doctype html>\n<html lang="es">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<link rel="icon" type="image/png" href="data:image/png;base64,${favicon}">\n<link rel="apple-touch-icon" href="data:image/png;base64,${icono}">\n</head>\n<body>\n${pagina}\n</body>\n</html>\n`,
 );
 
 const apkDestino = path.join(publico, 'Cumbion-Organo.apk');

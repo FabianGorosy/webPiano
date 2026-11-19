@@ -1,0 +1,4 @@
+node_modules
+*.log
+# El APK pesa más de 100 MB: no entra en GitHub. Se sube aparte (ver LEEME.md).
+publico/*.apk

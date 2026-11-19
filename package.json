@@ -1,0 +1,14 @@
+{
+  "name": "cumbion-web",
+  "version": "1.0.0",
+  "description": "Página de descarga y servidor online de Cumbión Órgano",
+  "private": true,
+  "main": "servidor.js",
+  "scripts": {
+    "preparar": "node preparar.js",
+    "start": "node servidor.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
